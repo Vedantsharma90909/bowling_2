@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bowling</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="throw.js"></script>
+    
+  </head>
+  <body>
+    <a-scene id="scene">
+
+      <!--Assets-->
+      
+      
+      <!--Light-->
+      <a-entity light="type: ambient; color: yellow; intensity:0.5"></a-entity>
+      
+
+      <!--Camera and Cursor-->
+      <a-entity
+        id="camera"
+        camera
+        position="0 -1.4 8"
+        wasd-controls
+        look-controls="pointerLockEnabled: false"        
+      >
+        
+        <a-cursor></a-cursor> 
+        <a-entity text="value:Press z to throw a ball;color:black;" position="0.3 0.35 -0.5"></a-entity>       
+      </a-entity>
+
+      <!--Bullets-->
+      <a-entity throw></a-entity>
+
+      <!--Ground-->
+      <a-plane
+      id="ground"
+      position="0 -2 0"
+      rotation="-90 0 0"
+      height="200"
+      width="200"
+      color=""
+      static-body
+      visible="true"
+    >
+    </a-plane>
+    
+    <a-cylinder color="crimson" height="20" radius="0.1" position="2 -2 -8" rotation="90 0 0"></a-cylinder>
+    <a-cylinder color="crimson" height="20" radius="0.1" position="-2 -2 -8" rotation="90 0 0"></a-cylinder>
+
+      <!--Boxes-->
+      <a-entity position="-0.9 -1 -10" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin1"></a-entity>
+      
+      <a-entity position="-0.6 -1 -9.5" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin2"></a-entity>
+
+      <a-entity position="-0.3 -1 -9" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin3"></a-entity>
+
+      <a-entity position="0 -1 -8.5" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin4"></a-entity>
+
+      <a-entity position="0.9 -1 -10" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin5"></a-entity>
+      
+      <a-entity position="0.6 -1 -9.5" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin6"></a-entity>
+
+      <a-entity position="0.3 -1 -9" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin7"></a-entity>
+
+      <a-entity position="0 -1 -9.5" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin8"></a-entity>
+
+      <a-entity position="-0.3 -1 -10" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin8"></a-entity>
+
+      <a-entity position="0.5 -1 -10" gltf-model="./assets/bowling_pin_gameready/scene.gltf" dynamic-body scale="0.2 0.2 0.2" id="pin8"></a-entity>
+
+    </a-scene>
+  </body>
+</html>
